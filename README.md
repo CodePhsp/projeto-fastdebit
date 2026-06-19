@@ -1,14 +1,12 @@
 # 🚀 FastDebit
 ![Status](https://img.shields.io/badge/status-refatotação-orange)
 
-FastDebit é uma aplicação desktop desenvolvida com Tkinter para agilizar a inserção dados na [Plataforma de Gestão de Dívidas](https://divida.apps.tcu.gov.br/calculadora-debito).
+FastDebit é uma aplicação desktop desenvolvida com Tkinter para agilizar a inserção dados na [Plataforma de Gestão de Dívidas](https://divida.apps.tcu.gov.br/calculadora-debito). Basicamente, o sistema converte automaticamente os dados do arquivo Excel para o formato esperado pela plataforma, reduzindo significativamente o tempo da operação e minimizando erros de digitação.
 
 
 ## Objetivo
-
-- Separação de responsabilidades
-- Estrutura em camadas
-- Evolução para aplicação de Design Patterns
+ - Reduzir tempo de inserção de dados
+ - Reduzir erros de preeenchimento
 
 ---
 
@@ -24,33 +22,31 @@ FastDebit é uma aplicação desktop desenvolvida com Tkinter para agilizar a in
 
 ## Funcionalidades
 
-- selecionar arquivo
-- Escrever
+- Seleção de planilhas .xlsx
+- Conversão dos dados
+- Interface gráfica simples
 
 ---
 
 ## Estrutura
 
 ```python
-src/
+
+app/
 │
 ├── views/
-│ └── form_view.py
+│ └── form.py
 │
 ├── services/
 │ ├── conversion.py
-│ ├── file.py
-│ └── path.py
+│ └── file.py
 │
-├── repository/
-│ └── repository.py
 └── main.py
 ```
 
-
 - **Views** → Interface gráfica e eventos
 - **Services** → Regras de negócio  
-- **Src** → Orquestração da aplicação  
+- **App** → Orquestração da aplicação  
 
 Essa separação permite:
 
@@ -62,11 +58,10 @@ Essa separação permite:
 
 ## Screenshots
 
-### Principal
+> Imagem temporária
+### Tela principal
 
 ![Interface Principal](docs/screenshots/main.png)
-
-
 
 ## Demonstração
 
@@ -74,7 +69,7 @@ Essa separação permite:
 
 ---
 
-## Como exercutar?
+## Como executar?
 
 ### 1) Clone o repositório
 ```bash
@@ -87,10 +82,10 @@ cd projeto-fastdebit
 ### 2) Crie ambiente virtual
 Para o sistema operacional windows
 
-> Dica: você pode escolher qualquer nome para seu ambiente virtual 
+> Dica: você pode escolher qualquer nome para seu ambiente virtual
 ```bash
 python -m venv .venv
-venv\Scripts\activate  
+.venv\Scripts\activate  
 ```
 
 Para o sistema operacional Linux
@@ -107,6 +102,6 @@ python -m pip install -r requirements.txt
 
 ### 4) Execute
 ```bash
-cd src
+cd app
 python main.py
 ```
